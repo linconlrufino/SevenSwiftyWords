@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         
         setupLayout()
     }
-    
+        
     func setupLayout() {
         view = UIView()
         view.backgroundColor = .white
@@ -90,6 +90,8 @@ class ViewController: UIViewController {
         view.addSubview(submit)
         view.addSubview(clear)
         view.addSubview(buttonsView)
+        
+        drawnLetterButtons()
         
         NSLayoutConstraint.activate([
             scoreLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
@@ -122,7 +124,9 @@ class ViewController: UIViewController {
             buttonsView.topAnchor.constraint(equalTo: submit.bottomAnchor, constant: 20),
             buttonsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -20)
         ])
-   
+    }
+
+    func drawnLetterButtons() {
         let width = 150
         let height = 80
         
@@ -139,7 +143,5 @@ class ViewController: UIViewController {
                 letterButtons.append(letterButon)
             }
         }
-        
     }
-
 }
